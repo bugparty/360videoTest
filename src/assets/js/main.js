@@ -61,6 +61,7 @@ window.h5 = {
             // invert the geometry on the x-axis so that all of the faces point inward
             geometry.scale(-1, 1, 1);
             var play_btn = document.getElementById('play_btn');
+            console.log("create video element");
             var video = document.createElement('video');
             video.width = 640;
             video.height = 360;
@@ -80,7 +81,7 @@ window.h5 = {
             // play_btn.innerHTML = 'Play';
             var texture = new THREE.VideoTexture(video);
             texture.minFilter = THREE.LinearFilter;
-            texture.format = THREE.RGBFormat;
+            texture.format = THREE.RGBAFormat;
             var material = new THREE.MeshBasicMaterial({ map: texture });
             mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
